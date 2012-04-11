@@ -11,7 +11,7 @@ import org.junit.Test;
 import com.menzus.gcj._2008.round1a.minimumscalarproduct.MinimalScalarProductInput;
 import com.menzus.gcj._2008.round1a.minimumscalarproduct.MinimalScalarProductInputBlockParser;
 
-public class MinimalScalarProductInputBlockParserTests {
+public class MinimalScalarProductInputBlockParserTest {
     private MinimalScalarProductInputBlockParser parser;
 
     @Before

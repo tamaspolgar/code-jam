@@ -11,7 +11,7 @@ import com.menzus.gcj._2008.round1a.milkshakes.CustomerPreference;
 import com.menzus.gcj._2008.round1a.milkshakes.MilkshakesInput;
 import com.menzus.gcj._2008.round1a.milkshakes.MilkshakesInputBlockParser;
 
-public class MilkshakesInputParserTest {
+public class MilkshakesInputBlockParserTest {
     private MilkshakesInputBlockParser parser;
 
     @Before
