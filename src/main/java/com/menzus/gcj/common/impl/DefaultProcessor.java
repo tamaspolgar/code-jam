@@ -44,11 +44,14 @@ public class DefaultProcessor<I extends Input, O extends Output> implements Proc
     @Override
     public void process() {
 	try {
+	    long startTime = System.currentTimeMillis();
 	    Iterator<String> lineIterator = inputFileLoader.getLineIterator();
 	    Iterator<String> transformedLineIterator = lineIteratorTransformer.transform(lineIterator);
 	    List<I> inputs = inputFileLineIteratorParser.parseInputFileLineIterator(transformedLineIterator);
 	    List<O> outputs = outputListProducer.produceOutputs(inputs);
 	    outputListWriter.writeOutputList(outputs);
+	    long endTime = System.currentTimeMillis();
+	    System.out.println("processed in " + (endTime - startTime) + "ms.");
 	} catch (IOException e) {
 	    throw new IllegalStateException(e);
 	}

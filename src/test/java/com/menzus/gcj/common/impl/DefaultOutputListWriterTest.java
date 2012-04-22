@@ -8,8 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -36,14 +35,14 @@ public class DefaultOutputListWriterTest {
 	outputListWriter.setFileName(OUTPUT_FILE_NAME);
 	OutputEntry output0 = Mockito.mock(OutputEntry.class);
 	Mockito.when(output0.formatOutput()).thenReturn("output0");
-	
+
 	@SuppressWarnings("unchecked")
 	OutputList<OutputEntry> outputList = Mockito.mock(OutputList.class);
 	OutputEntry output1 = Mockito.mock(OutputEntry.class);
 	Mockito.when(output1.formatOutput()).thenReturn("output1");
 	OutputEntry output2 = Mockito.mock(OutputEntry.class);
 	Mockito.when(output2.formatOutput()).thenReturn("output2");
-	List<OutputEntry> outputEntries = Arrays.asList(output1,output2);
+	List<OutputEntry> outputEntries = Arrays.asList(output1, output2);
 	Mockito.when(outputList.getOutputEntries()).thenReturn(outputEntries);
 
 	OutputEntry output3 = Mockito.mock(OutputEntry.class);
@@ -58,7 +57,7 @@ public class DefaultOutputListWriterTest {
 	assertOutputFile();
     }
 
-    @Test(expected=IOException.class)
+    @Test(expected = IOException.class)
     public void writeOutputListNotCreateableFile() throws IOException {
 	outputListWriter.setFileName(UNCREATEABL_OUTPUT_FILE_NAME);
 	List<Output> outputs = Arrays.asList();
